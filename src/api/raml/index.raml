@@ -8,11 +8,54 @@ mediaType: application/json
 traits:
   - auth: !include _traits/auth.raml
 
+/issueTypes:
+  description: IssueType resource.
+  get: 
+    description: Retrieve a list of IssueType.
+  post:
+    description: create a new IssueType.
+    is: [auth: { roles: 'staff' }]
+  /{id}:
+    get:
+      description: retrieve an issueType by its id
+    put: 
+      description: update an issueType specified by its id
+      is: [auth: { roles: 'staff' }]
+    delete:
+      description: delete an issueType specified by its id
+      is: [auth: { roles: 'staff' }]
+
+/issues:
+  description: Issue resource.
+  get:
+    description: Retrieve a list of issue.
+  post:
+    description: create a new issue.
+  /{id}:
+    get: 
+      description: retrieve an issue by its id
+    put:
+      description: update an issue by its id
+    delete:
+      description: delete an issue by its id
+
+/actions:
+  get:
+    is: [auth: { roles: 'staff' }]
+    description: Retrieve a list of actions.
+  post:
+    is: [auth: { roles: 'staff' }]
+    description: create a new action.
+  /{id}:
+    get: 
+      is: [auth: { roles: 'staff' }]
+      description: retrieve an action by its id
+
 /users:
   description: User resource.
   get:
     is: [auth: { roles: 'staff' }]
-    description: Retrive the list of the users.
+    description: Retrieve the list of the users.
     responses:
       200:
         body:
