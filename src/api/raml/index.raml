@@ -12,18 +12,80 @@ traits:
   description: IssueType resource.
   get: 
     description: Retrieve a list of IssueType.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "shortName": "broken streetlight",
+                  "description": "broken streetlight" 
+                },
+                ...
+              ]
   post:
     description: create a new IssueType.
     is: [auth: { roles: 'staff' }]
+    body:
+      application/json:
+        example: |
+          {
+            "shortName": "broken streetlight",
+            "description": "broken streetlight" 
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "shortName": "broken streetlight",
+                "description": "broken streetlight"
+              }
   /{id}:
     get:
       description: retrieve an issueType by its id
+      responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "shortName": "broken streetlight",
+                  "description": "broken streetlight" 
+                }
+              ]
     put: 
       description: update an issueType specified by its id
       is: [auth: { roles: 'staff' }]
+      body:
+        application/json:
+          example: |
+            {
+              "shortName": "broken streetlight",
+              "description": "broken streetlight" 
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "shortName": "broken streetlight",
+                  "description": "broken streetlight" 
+                }
     delete:
       description: delete an issueType specified by its id
       is: [auth: { roles: 'staff' }]
+      responses:
+        204:
+          body:
 
 /issues:
   description: Issue resource.
@@ -31,6 +93,33 @@ traits:
     description: Retrieve a list of issue.
   post:
     description: create a new issue.
+    is: [auth: { roles: 'citizen' }]
+    body:
+      application/json:
+        example: |
+          {
+            "author": "Romain",
+            "type": "broken streelight",
+            "description": "+6624582",
+            "coords": [
+              "45.6", "34.6"
+            ]
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "id": "54d8ae163fd30364605c81a4",
+                "author": "Romain",
+                "type": "broken streelight",
+                "description": "+6624582",
+                "coords": [
+                  "45.6", "34.6"
+                ]
+              }
+
   /{id}:
     get: 
       description: retrieve an issue by its id
