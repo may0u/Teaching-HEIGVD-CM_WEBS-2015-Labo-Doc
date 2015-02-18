@@ -14,6 +14,10 @@ static site. The following [Node.js][node] stack is used:
 Note that apart from Markdown support within the RAML spec it also supports
 plain `.md` files that are compiled independently from the API documentation.
 
+## Group
+Maya Jeanmonod et Natalie Canonica
+[app heroku][heroku] 
+
 ## Quickstart
 
 ### Prerequisites
@@ -49,3 +53,4 @@ To [APIDoc Seed](https://github.com/lotaris/apidoc-seed).
 [jade]: http://jade-lang.com/
 [stylus]: http://learnboost.github.io/stylus/
 [bootstrap]: http://getbootstrap.com/
+[heroku]: https://sleepy-scrubland-1999.herokuapp.com/
