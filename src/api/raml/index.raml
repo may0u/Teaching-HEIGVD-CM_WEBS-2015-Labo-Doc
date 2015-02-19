@@ -49,17 +49,17 @@ traits:
     get:
       description: retrieve an issueType by its id
       responses:
-      200:
-        body:
-          application/json:
-            example: |
-              [
-                {
-                  "id": "54d8ae163fd30364605c81a4",
-                  "shortName": "broken streetlight",
-                  "description": "broken streetlight" 
-                }
-              ]
+        200:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "id": "54d8ae163fd30364605c81a4",
+                    "shortName": "broken streetlight",
+                    "description": "broken streetlight" 
+                  }
+                ]
     put: 
       description: update an issueType specified by its id
       is: [auth: { roles: 'staff' }]
@@ -91,6 +91,23 @@ traits:
   description: Issue resource.
   get:
     description: Retrieve a list of issue.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "author": "Romain",
+                  "type": "broken streelight",
+                  "description": "+6624582",
+                  "coords": [
+                    "45.6", "34.6"
+                  ]
+                },
+                ...
+              ]
   post:
     description: create a new issue.
     is: [auth: { roles: 'citizen' }]
@@ -106,29 +123,10 @@ traits:
             ]
           }
     responses:
-      201:
-        body:
-          application/json:
-            example: |
-              {
-                "id": "54d8ae163fd30364605c81a4",
-                "author": "Romain",
-                "type": "broken streelight",
-                "description": "+6624582",
-                "coords": [
-                  "45.6", "34.6"
-                ]
-              }
-
-  /{id}:
-    get: 
-      description: retrieve an issue by its id
-      responses:
-      200:
-        body:
-          application/json:
-            example: |
-              [
+        201:
+          body:
+            application/json:
+              example: |
                 {
                   "id": "54d8ae163fd30364605c81a4",
                   "author": "Romain",
@@ -136,8 +134,27 @@ traits:
                   "description": "+6624582",
                   "coords": [
                     "45.6", "34.6"
+                  ]
                 }
-              ]
+
+  /{id}:
+    get: 
+      description: retrieve an issue by its id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "id": "54d8ae163fd30364605c81a4",
+                    "author": "Romain",
+                    "type": "broken streelight",
+                    "description": "+6624582",
+                    "coords": [
+                      "45.6", "34.6"
+                  }
+                ]
     put:
       description: update an issue by its id
       body:
@@ -173,13 +190,64 @@ traits:
   get:
     is: [auth: { roles: 'staff' }]
     description: Retrieve a list of actions.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "actionName": "solving an issue",
+                  "type": "broken streelight",
+                  "description": "solving a broken streelight",
+                  "coords": "Romain"
+                },
+                ...
+              ]
+
   post:
     is: [auth: { roles: 'staff' }]
     description: create a new action.
+    body:
+      application/json:
+        example: |
+                {
+                  "actionName": "solving an issue",
+                  "type": "broken streelight",
+                  "description": "solving a broken streelight",
+                  "coords": "Romain"
+                }
+    responses:
+        201:
+          body:
+            application/json:
+              example: |
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "actionName": "solving an issue",
+                  "type": "broken streelight",
+                  "description": "solving a broken streelight",
+                  "coords": "Romain"
+                }
   /{id}:
     get: 
       is: [auth: { roles: 'staff' }]
       description: retrieve an action by its id
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "id": "54d8ae163fd30364605c81a4",
+                    "actionName": "solving an issue",
+                    "type": "broken streelight",
+                    "description": "solving a broken streelight",
+                    "coords": "Romain"
+                  }
+                ]
 
 /users:
   description: User resource.
