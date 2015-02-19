@@ -45,5 +45,8 @@
   "scripts": {
     "start": "grunt serve",
     "postinstall": "grunt prod --private=true"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
   }
 }
