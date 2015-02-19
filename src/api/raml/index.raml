@@ -1,7 +1,6 @@
 #%RAML 0.8
 ---
 
-coucou
 title: API Resource
 baseUri: https://localhost/api/
 protocols: [HTTPS]
@@ -13,6 +12,7 @@ traits:
 /issueTypes:
   description: IssueType resource.
   get: 
+    is: [auth: {roles: 'any'} ]
     description: Retrieve a list of IssueType.
     responses:
       200:
@@ -49,6 +49,7 @@ traits:
               }
   /{id}:
     get:
+      is: [auth: {roles: 'any'} ]  
       description: retrieve an issueType by its id
       responses:
         200:
@@ -92,6 +93,7 @@ traits:
 /issues:
   description: Issue resource.
   get:
+    is: [auth: {roles: 'any'} ]
     description: Retrieve a list of issue.
     responses:
       200:
@@ -141,6 +143,7 @@ traits:
 
   /{id}:
     get: 
+      is: [auth: {roles: 'any'} ]
       description: retrieve an issue by its id
       responses:
         200:
@@ -158,6 +161,7 @@ traits:
                   }
                 ]
     put:
+      is: [auth: {roles: 'any'} ]
       description: update an issue by its id
       body:
         application/json:
@@ -183,6 +187,7 @@ traits:
                     "45.6", "34.6"
                 }
     delete:
+      is: [auth: {roles: 'any'} ]
       description: delete an issue by its id
       responses:
         204:
@@ -284,6 +289,7 @@ traits:
                 ...
               ]
   post:
+    is: [auth: {roles: 'any'} ]
     description: Create a new user.
     body:
       application/json:
