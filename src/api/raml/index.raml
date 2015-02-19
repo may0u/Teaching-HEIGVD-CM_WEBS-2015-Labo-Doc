@@ -130,10 +130,51 @@ traits:
   /{id}:
     get: 
       description: retrieve an issue by its id
+      responses:
+      200:
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "author": "Romain",
+                  "type": "broken streelight",
+                  "description": "+6624582",
+                  "coords": [
+                    "45.6", "34.6"
+                }
+              ]
     put:
       description: update an issue by its id
+      body:
+        application/json:
+          example: |
+            {
+                "author": "Romain",
+                "type": "broken streelight",
+                "description": "+6624582",
+                "coords": [
+                    "45.6", "34.6"
+            }
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "author": "Romain",
+                  "type": "broken streelight",
+                  "description": "+6624582",
+                  "coords": [
+                    "45.6", "34.6"
+                }
     delete:
       description: delete an issue by its id
+      responses:
+        204:
+          body:
 
 /actions:
   get:
