@@ -108,7 +108,8 @@ traits:
                   "description": "+6624582",
                   "coords": [
                     "45.6", "34.6"
-                  ]
+                  ],
+                  "action": "solving an issue"
                 },
                 ...
               ]
@@ -124,7 +125,8 @@ traits:
             "description": "+6624582",
             "coords": [
               "45.6", "34.6"
-            ]
+            ],
+            "action": "solving an issue"
           }
     responses:
         201:
@@ -138,7 +140,8 @@ traits:
                   "description": "+6624582",
                   "coords": [
                     "45.6", "34.6"
-                  ]
+                  ],
+                  "action": "solving an issue"
                 }
 
   /{id}:
@@ -157,7 +160,8 @@ traits:
                     "type": "broken streelight",
                     "description": "+6624582",
                     "coords": [
-                      "45.6", "34.6"
+                      "45.6", "34.6"],
+                    "action": "solving an issue"
                   }
                 ]
     put:
@@ -171,7 +175,8 @@ traits:
                 "type": "broken streelight",
                 "description": "+6624582",
                 "coords": [
-                    "45.6", "34.6"
+                    "45.6", "34.6"],
+                "action": "solving an issue"
             }
       responses:
         200:
@@ -184,7 +189,8 @@ traits:
                   "type": "broken streelight",
                   "description": "+6624582",
                   "coords": [
-                    "45.6", "34.6"
+                    "45.6", "34.6"],
+                "action": "solving an issue"
                 }
     delete:
       is: [auth: {roles: 'any'} ]
@@ -206,9 +212,8 @@ traits:
                 {
                   "id": "54d8ae163fd30364605c81a4",
                   "actionName": "solving an issue",
-                  "type": "broken streelight",
                   "description": "solving a broken streelight",
-                  "coords": "Romain"
+                  "author": "Romain"
                 },
                 ...
               ]
@@ -221,9 +226,8 @@ traits:
         example: |
                 {
                   "actionName": "solving an issue",
-                  "type": "broken streelight",
                   "description": "solving a broken streelight",
-                  "coords": "Romain"
+                  "author": "Romain"
                 }
     responses:
         201:
@@ -233,9 +237,8 @@ traits:
                 {
                   "id": "54d8ae163fd30364605c81a4",
                   "actionName": "solving an issue",
-                  "type": "broken streelight",
                   "description": "solving a broken streelight",
-                  "coords": "Romain"
+                  "author": "Romain"
                 }
   /{id}:
     get: 
@@ -247,13 +250,12 @@ traits:
             application/json:
               example: |
                 [
-                  {
-                    "id": "54d8ae163fd30364605c81a4",
-                    "actionName": "solving an issue",
-                    "type": "broken streelight",
-                    "description": "solving a broken streelight",
-                    "coords": "Romain"
-                  }
+                {
+                  "id": "54d8ae163fd30364605c81a4",
+                  "actionName": "solving an issue",
+                  "description": "solving a broken streelight",
+                  "author": "Romain"
+                }
                 ]
 
 /users:
