@@ -12,6 +12,18 @@ html {
 }
 body {
   margin: 0;
+  background: 
+      url(../img/city.png) repeat-x bottom , url(../img/gplaypattern.png);
+}
+
+.navbar {
+    background: rgba(105, 226, 222, 0.3);
+}
+
+.col-sm-9{
+    background: rgba(255, 255, 255, 0.8);
+    border: #e7e7e7 1px solid;
+    margin-bottom: 30px;
 }
 article,
 aside,
@@ -4118,7 +4130,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #e7e7e7;
+  background-color: rgba(255,255,255,0.8);
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
