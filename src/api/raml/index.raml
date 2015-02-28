@@ -103,13 +103,13 @@ traits:
               [
                 {
                   "id": "54d8ae163fd30364605c81a4",
-                  "author": "Romain",
-                  "type": "broken streelight",
+                  "author": "Rom,
+                  "typeId": "54ec73dc300482eafb616f26",
                   "description": "+6624582",
                   "coords": [
                     "45.6", "34.6"
                   ],
-                  "action": "solving an issue"
+                  "actionId": "54eb42653004b2ba2f8d66d7"
                 },
                 ...
               ]
@@ -120,13 +120,13 @@ traits:
       application/json:
         example: |
           {
-            "author": "Romain",
-            "type": "broken streelight",
+            "authorId": "54eb40333004d50578910706",
+            "typeId": "54ec73dc300482eafb616f26",
             "description": "+6624582",
             "coords": [
               "45.6", "34.6"
             ],
-            "action": "solving an issue"
+            "actionId": "54eb42653004b2ba2f8d66d7"
           }
     responses:
         201:
@@ -135,13 +135,13 @@ traits:
               example: |
                 {
                   "id": "54d8ae163fd30364605c81a4",
-                  "author": "Romain",
-                  "type": "broken streelight",
+                  "authorId": "54eb40333004d50578910706",
+                  "typeId": "54ec73dc300482eafb616f26",
                   "description": "+6624582",
                   "coords": [
                     "45.6", "34.6"
                   ],
-                  "action": "solving an issue"
+                  "actionId": "54eb42653004b2ba2f8d66d7"
                 }
 
   /{id}:
@@ -156,12 +156,12 @@ traits:
                 [
                   {
                     "id": "54d8ae163fd30364605c81a4",
-                    "author": "Romain",
-                    "type": "broken streelight",
+                    "authorId": "54eb40333004d50578910706",
+                    "typeId": "54ec73dc300482eafb616f26",
                     "description": "+6624582",
                     "coords": [
                       "45.6", "34.6"],
-                    "action": "solving an issue"
+                    "actionId": "54eb42653004b2ba2f8d66d7"
                   }
                 ]
     put:
@@ -171,12 +171,12 @@ traits:
         application/json:
           example: |
             {
-                "author": "Romain",
-                "type": "broken streelight",
+                "authorId": "54eb40333004d50578910706",
+                "typeId": "54ec73dc300482eafb616f26",
                 "description": "+6624582",
                 "coords": [
                     "45.6", "34.6"],
-                "action": "solving an issue"
+                "actionId": "54eb42653004b2ba2f8d66d7"
             }
       responses:
         200:
@@ -185,12 +185,12 @@ traits:
               example: |
                 {
                   "id": "54d8ae163fd30364605c81a4",
-                  "author": "Romain",
-                  "type": "broken streelight",
+                  "authorId": "54eb40333004d50578910706",
+                  "typeId": "54ec73dc300482eafb616f26",
                   "description": "+6624582",
                   "coords": [
                     "45.6", "34.6"],
-                "action": "solving an issue"
+                "actionId": "54eb42653004b2ba2f8d66d7"
                 }
     delete:
       is: [auth: {roles: 'any'} ]
@@ -213,7 +213,7 @@ traits:
                   "id": "54d8ae163fd30364605c81a4",
                   "actionName": "solving an issue",
                   "description": "solving a broken streelight",
-                  "author": "Romain"
+                  "authorId": "54eb40333004d50578910706"
                 },
                 ...
               ]
@@ -227,7 +227,7 @@ traits:
                 {
                   "actionName": "solving an issue",
                   "description": "solving a broken streelight",
-                  "author": "Romain"
+                  "authorId": "54eb40333004d50578910706"
                 }
     responses:
         201:
@@ -238,7 +238,7 @@ traits:
                   "id": "54d8ae163fd30364605c81a4",
                   "actionName": "solving an issue",
                   "description": "solving a broken streelight",
-                  "author": "Romain"
+                  "authorId": "54eb40333004d50578910706"
                 }
   /{id}:
     get: 
@@ -254,7 +254,7 @@ traits:
                   "id": "54d8ae163fd30364605c81a4",
                   "actionName": "solving an issue",
                   "description": "solving a broken streelight",
-                  "author": "Romain"
+                  "authorId": "54eb40333004d50578910706"
                 }
                 ]
 
